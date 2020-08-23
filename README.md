@@ -18,3 +18,5 @@ INSTALLATION PROCESS
   3. Enjoy the darkness!
 Disclaimer:
   THIS IS A TEST BUILD, NOT EVERYTHING IS IMPLEMENTED. ONCE EVERYTHING GETS IMPLEMENTED THE SCRIPT WILL UPDATE WITH TRYHACKME(when tryhackme updates, come to this page and paste the new script).
+BUG HUNTING:
+  If you found a bug please contact me on Discord(FrimeX#1337), I will try to fix them ASAP.
