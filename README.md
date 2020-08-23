@@ -16,3 +16,5 @@ INSTALLATION PROCESS
     2.5 Copy the tampermonkey.js file's contents and paste it in
     2.6 Press Ctrl+S and you are done!
   3. Enjoy the darkness!
+Disclaimer:
+  THIS IS A TEST BUILD, NOT EVERYTHING IS IMPLEMENTED. ONCE EVERYTHING GETS IMPLEMENTED THE SCRIPT WILL UPDATE WITH TRYHACKME(when tryhackme updates, come to this page and paste the new script).
