@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         THM Dark mode prototype
 // @namespace    http://tampermonkey.net/
-// @version      prototype.1
+// @version      prototype.2
 // @description  Dark mode for THM cause my eyes were burning
 // @author       FrimeX
 // @match        https://tryhackme.com/*
@@ -15,14 +15,8 @@ var $;
 //checker
 window.onload = function() {
     main();
-    if (document.URL.match('/room')) {
-        document.getElementsByClassName("room-header")[0].style.color = colors[6];
-        document.getElementsByClassName("card-body")[3].style.backgroundColor = colors[5];
-        document.getElementsByClassName("card-body")[3].style.borderColor = colors[5];
-        document.getElementsByClassName("mb")[0].style.color = colors[4];
-        document.getElementById("task-list").style.border = "0px solid #00000000";
-        document.getElementById("task-list").style.borderRadius = "10px";
-        document.getElementById("task-list").style.backgroundColor = colors[5];
+    if (document.URL.match('/rooms')) {
+
     } else if(document.URL.match('/hacktivities')) {
 
 
@@ -61,6 +55,39 @@ window.onload = function() {
             document.getElementsByClassName('card')[i].style.backgroundColor = colors[2];
             document.getElementsByClassName('card')[i].style.color = colors[4];
         }
+    } else if(document.URL.match('/paths')) {
+        for(var pop = 0; pop < document.getElementsByClassName('card shadow-light noselect room-main').length; pop++) {
+            document.getElementsByClassName("card shadow-light noselect room-main")[pop].style.color = colors[1];
+        }
+        setTimeout(function() {
+            for(var d = 0; d < document.getElementsByClassName("card mb task-complete").length; d++) {
+                document.getElementsByClassName("card mb task-complete")[d].style.color = colors[4];
+                document.getElementsByClassName("card mb task-complete")[d].style.backgroundColor = colors[3];
+            }
+            for(var j = 0; j < document.getElementsByClassName("card mb task-incomplete").length; j++) {
+                document.getElementsByClassName("card mb task-incomplete")[j].style.color = colors[4];
+                document.getElementsByClassName("card mb task-incomplete")[j].style.backgroundColor = colors[3];
+            }
+}, 1000);
+    } else {
+            //complete cards
+        setTimeout(function() {
+            for(var d = 0; d < document.getElementsByClassName("card mb task-complete").length; d++) {
+                document.getElementsByClassName("card mb task-complete")[d].style.color = colors[4];
+                document.getElementsByClassName("card mb task-complete")[d].style.backgroundColor = colors[3];
+            }
+            for(var j = 0; j < document.getElementsByClassName("card mb task-incomplete").length; j++) {
+                document.getElementsByClassName("card mb task-incomplete")[j].style.color = colors[4];
+                document.getElementsByClassName("card mb task-incomplete")[j].style.backgroundColor = colors[3];
+            }}, 1000);
+            document.getElementsByClassName("room-header")[0].style.color = colors[6];
+            document.getElementsByClassName("card-body")[3].style.backgroundColor = colors[5];
+            document.getElementsByClassName("card-body")[3].style.borderColor = colors[5];
+            document.getElementsByClassName("mb")[0].style.color = colors[4];
+            document.getElementById("task-list").style.border = "0px solid #00000000";
+            document.getElementById("task-list").style.borderRadius = "10px";
+            document.getElementById("task-list").style.backgroundColor = colors[5];
+
     }
     return;
 }
